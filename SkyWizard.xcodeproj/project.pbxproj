@@ -20,6 +20,7 @@
 		FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079C2AD5968A0064FE0C /* SettingsView.swift */; };
 		FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079E2AD596FD0064FE0C /* WeatherView.swift */; };
 		FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A12AD599080064FE0C /* View+Extensions.swift */; };
+		FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FD7F079C2AD5968A0064FE0C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FD7F079E2AD596FD0064FE0C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD7F07A12AD599080064FE0C /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 		FD7F078B2AD58E830064FE0C /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
+				FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,
 				FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */,
 			);
