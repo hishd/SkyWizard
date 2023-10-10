@@ -10,7 +10,6 @@
 		FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07742AD582620064FE0C /* AppDelegate.swift */; };
 		FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07762AD582620064FE0C /* SceneDelegate.swift */; };
 		FD7F07792AD582620064FE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07782AD582620064FE0C /* ViewController.swift */; };
-		FD7F077C2AD582620064FE0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077A2AD582620064FE0C /* Main.storyboard */; };
 		FD7F077E2AD582670064FE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077D2AD582670064FE0C /* Assets.xcassets */; };
 		FD7F07812AD582670064FE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,10 +19,10 @@
 		FD7F07742AD582620064FE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7F07762AD582620064FE0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FD7F07782AD582620064FE0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FD7F077B2AD582620064FE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FD7F077D2AD582670064FE0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD7F07802AD582670064FE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7F07822AD582670064FE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD7F07882AD5831B0064FE0C /* SkyWizard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyWizard.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +55,10 @@
 		FD7F07732AD582620064FE0C /* SkyWizard */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F07882AD5831B0064FE0C /* SkyWizard.entitlements */,
 				FD7F07742AD582620064FE0C /* AppDelegate.swift */,
 				FD7F07762AD582620064FE0C /* SceneDelegate.swift */,
 				FD7F07782AD582620064FE0C /* ViewController.swift */,
-				FD7F077A2AD582620064FE0C /* Main.storyboard */,
 				FD7F077D2AD582670064FE0C /* Assets.xcassets */,
 				FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */,
 				FD7F07822AD582670064FE0C /* Info.plist */,
@@ -127,7 +126,6 @@
 			files = (
 				FD7F07812AD582670064FE0C /* LaunchScreen.storyboard in Resources */,
 				FD7F077E2AD582670064FE0C /* Assets.xcassets in Resources */,
-				FD7F077C2AD582620064FE0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +145,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FD7F077A2AD582620064FE0C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FD7F077B2AD582620064FE0C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -290,6 +280,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkyWizard/SkyWizard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZMV4XYT773;
@@ -297,9 +288,8 @@
 				INFOPLIST_FILE = SkyWizard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SkyWizard/SkyWizard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZMV4XYT773;
@@ -325,9 +316,8 @@
 				INFOPLIST_FILE = SkyWizard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
