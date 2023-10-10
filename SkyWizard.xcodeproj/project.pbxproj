@@ -21,9 +21,9 @@
 		FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079E2AD596FD0064FE0C /* WeatherView.swift */; };
 		FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A12AD599080064FE0C /* View+Extensions.swift */; };
 		FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */; };
-		FD7F07A72AD5B9230064FE0C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FD7F07A62AD5B9230064FE0C /* Swinject */; };
-		FD7F07A92AD5B9230064FE0C /* Swinject-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FD7F07A82AD5B9230064FE0C /* Swinject-Dynamic */; };
 		FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */; };
+		FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FD7F07B22AD5BF990064FE0C /* Swinject */; };
+		FDCA650D2AD6040700E4DD4C /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +45,7 @@
 		FD7F07A12AD599080064FE0C /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
 		FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD7F07A72AD5B9230064FE0C /* Swinject in Frameworks */,
-				FD7F07A92AD5B9230064FE0C /* Swinject-Dynamic in Frameworks */,
+				FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +114,7 @@
 			children = (
 				FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */,
 				FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */,
+				FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -197,8 +198,7 @@
 			);
 			name = SkyWizard;
 			packageProductDependencies = (
-				FD7F07A62AD5B9230064FE0C /* Swinject */,
-				FD7F07A82AD5B9230064FE0C /* Swinject-Dynamic */,
+				FD7F07B22AD5BF990064FE0C /* Swinject */,
 			);
 			productName = SkyWizard;
 			productReference = FD7F07712AD582620064FE0C /* SkyWizard.app */;
@@ -229,7 +229,7 @@
 			);
 			mainGroup = FD7F07682AD582620064FE0C;
 			packageReferences = (
-				FD7F07A52AD5B9230064FE0C /* XCRemoteSwiftPackageReference "Swinject" */,
+				FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = FD7F07722AD582620064FE0C /* Products */;
 			projectDirPath = "";
@@ -268,6 +268,7 @@
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
 				FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */,
 				FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */,
+				FDCA650D2AD6040700E4DD4C /* ApplicationError.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,
 				FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */,
 			);
@@ -420,7 +421,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -448,7 +449,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -486,26 +487,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FD7F07A52AD5B9230064FE0C /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/Swinject.git";
 			requirement = {
-				kind = exactVersion;
-				version = 2.8.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.8.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FD7F07A62AD5B9230064FE0C /* Swinject */ = {
+		FD7F07B22AD5BF990064FE0C /* Swinject */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FD7F07A52AD5B9230064FE0C /* XCRemoteSwiftPackageReference "Swinject" */;
+			package = FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */;
 			productName = Swinject;
-		};
-		FD7F07A82AD5B9230064FE0C /* Swinject-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD7F07A52AD5B9230064FE0C /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = "Swinject-Dynamic";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

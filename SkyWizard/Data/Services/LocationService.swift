@@ -22,12 +22,20 @@ final class LocationService: NSObject {
             locationFetchedCallback?(fetchedLocation)
         }
     }
-
-    public func getCurrentLocation(callback: @escaping (CLLocation) -> Void) {
+    
+    override init() {
+        super.init()
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
+    }
+
+    public func getCurrentLocation(callback: @escaping (CLLocation) -> Void) {
         locationManager.startUpdatingLocation()
         self.locationFetchedCallback = callback
+        
+        if let location = locationManager.location {
+            self.fetchedLocation = location
+        }
     }
 }
 

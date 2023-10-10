@@ -32,7 +32,7 @@ extension UIViewController {
         gradient.frame = view.frame
     }
     
-    func showMessage(withTitle: String, message: String) {
+    func showMessage(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default))
         present(alert, animated: true, completion: nil)
