@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 class WeatherViewController: UIViewController {
     
@@ -16,8 +17,15 @@ class WeatherViewController: UIViewController {
         
         view.addSubview(primaryView)
         primaryView.fillSuperViewSafeArea()
+        
+        getLocation()
     }
-
+    
+    private func getLocation() {
+        LocationService.shared.getCurrentLocation { location in
+            Logger.viewCycle.info("Location Lat: \(location.coordinate.latitude) Location Lon: \(location.coordinate.longitude)")
+        }
+    }
 
 }
 
