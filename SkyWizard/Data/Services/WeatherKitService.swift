@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import WeatherKit
+import CoreLocation
+
+
+final class WeatherKitService {
+    public static let shared = WeatherKitService()
+    
+    private init() {}
+    
+    public func getWeather(for location: CLLocation) {
+        
+    }
+}

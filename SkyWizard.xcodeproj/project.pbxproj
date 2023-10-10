@@ -9,19 +9,21 @@
 /* Begin PBXBuildFile section */
 		FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07742AD582620064FE0C /* AppDelegate.swift */; };
 		FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07762AD582620064FE0C /* SceneDelegate.swift */; };
-		FD7F07792AD582620064FE0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07782AD582620064FE0C /* ViewController.swift */; };
+		FD7F07792AD582620064FE0C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07782AD582620064FE0C /* WeatherViewController.swift */; };
 		FD7F077E2AD582670064FE0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077D2AD582670064FE0C /* Assets.xcassets */; };
 		FD7F07812AD582670064FE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */; };
 		FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F078F2AD58F2E0064FE0C /* LocationService.swift */; };
 		FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07912AD58F380064FE0C /* IAPService.swift */; };
 		FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */; };
+		FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */; };
+		FD7F079B2AD5920D0064FE0C /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079A2AD5920D0064FE0C /* TabController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FD7F07712AD582620064FE0C /* SkyWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7F07742AD582620064FE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FD7F07762AD582620064FE0C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FD7F07782AD582620064FE0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FD7F07782AD582620064FE0C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		FD7F077D2AD582670064FE0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FD7F07802AD582670064FE0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FD7F07822AD582670064FE0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -29,6 +31,8 @@
 		FD7F078F2AD58F2E0064FE0C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		FD7F07912AD58F380064FE0C /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
 		FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
+		FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		FD7F079A2AD5920D0064FE0C /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 		FD7F07892AD58E740064FE0C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				FD7F07782AD582620064FE0C /* ViewController.swift */,
+				FD7F07992AD591D50064FE0C /* TabController */,
+				FD7F07962AD591920064FE0C /* Settings */,
+				FD7F07952AD5918A0064FE0C /* Weather */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -121,6 +127,30 @@
 				FD7F07762AD582620064FE0C /* SceneDelegate.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		FD7F07952AD5918A0064FE0C /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F07782AD582620064FE0C /* WeatherViewController.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FD7F07962AD591920064FE0C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		FD7F07992AD591D50064FE0C /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F079A2AD5920D0064FE0C /* TabController.swift */,
+			);
+			path = TabController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +223,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD7F07792AD582620064FE0C /* ViewController.swift in Sources */,
+				FD7F07792AD582620064FE0C /* WeatherViewController.swift in Sources */,
+				FD7F079B2AD5920D0064FE0C /* TabController.swift in Sources */,
 				FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */,
+				FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,

@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+final class IAPService {
+    public static let shared = IAPService()
+    
+    private init() {}
+}
