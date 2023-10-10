@@ -17,6 +17,9 @@
 		FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */; };
 		FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */; };
 		FD7F079B2AD5920D0064FE0C /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079A2AD5920D0064FE0C /* TabController.swift */; };
+		FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079C2AD5968A0064FE0C /* SettingsView.swift */; };
+		FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079E2AD596FD0064FE0C /* WeatherView.swift */; };
+		FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A12AD599080064FE0C /* View+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +36,9 @@
 		FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
 		FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FD7F079A2AD5920D0064FE0C /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		FD7F079C2AD5968A0064FE0C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FD7F079E2AD596FD0064FE0C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		FD7F07A12AD599080064FE0C /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,7 @@
 		FD7F07892AD58E740064FE0C /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F07A02AD598FC0064FE0C /* Util */,
 				FD7F07992AD591D50064FE0C /* TabController */,
 				FD7F07962AD591920064FE0C /* Settings */,
 				FD7F07952AD5918A0064FE0C /* Weather */,
@@ -133,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07782AD582620064FE0C /* WeatherViewController.swift */,
+				FD7F079E2AD596FD0064FE0C /* WeatherView.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -141,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */,
+				FD7F079C2AD5968A0064FE0C /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -151,6 +160,14 @@
 				FD7F079A2AD5920D0064FE0C /* TabController.swift */,
 			);
 			path = TabController;
+			sourceTree = "<group>";
+		};
+		FD7F07A02AD598FC0064FE0C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F07A12AD599080064FE0C /* View+Extensions.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,8 +242,11 @@
 			files = (
 				FD7F07792AD582620064FE0C /* WeatherViewController.swift in Sources */,
 				FD7F079B2AD5920D0064FE0C /* TabController.swift in Sources */,
+				FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */,
 				FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */,
+				FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */,
 				FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */,
+				FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,

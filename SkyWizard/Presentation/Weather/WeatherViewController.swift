@@ -8,11 +8,14 @@
 import UIKit
 
 class WeatherViewController: UIViewController {
+    
+    let primaryView = WeatherView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .systemBackground
+        
+        view.addSubview(primaryView)
+        primaryView.fillSuperViewSafeArea()
     }
 
 
