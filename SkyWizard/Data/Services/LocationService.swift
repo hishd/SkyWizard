@@ -10,8 +10,6 @@ import CoreLocation
 
 
 final class LocationService: NSObject {
-    public static let shared = LocationService()
-    
     private let locationManager = CLLocationManager()
     private var locationFetchedCallback: ((CLLocation) -> Void)?
     
@@ -24,11 +22,7 @@ final class LocationService: NSObject {
             locationFetchedCallback?(fetchedLocation)
         }
     }
-    
-    private override init(){
-        super.init()
-    }
-    
+
     public func getCurrentLocation(callback: @escaping (CLLocation) -> Void) {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self

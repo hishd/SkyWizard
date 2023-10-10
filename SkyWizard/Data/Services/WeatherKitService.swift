@@ -10,11 +10,7 @@ import WeatherKit
 import CoreLocation
 
 
-final class WeatherKitService {
-    public static let shared = WeatherKitService()
-    
-    private init() {}
-    
+final class WeatherKitService {        
     public func getWeather(for location: CLLocation) {
         
     }

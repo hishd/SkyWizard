@@ -11,6 +11,7 @@ import OSLog
 class WeatherViewController: UIViewController {
     
     let primaryView = WeatherView()
+    let injector = DependencyInjector.shared.container
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,8 @@ class WeatherViewController: UIViewController {
     }
     
     private func getLocation() {
-        LocationService.shared.getCurrentLocation { location in
+        let locationService = injector.resolve(LocationService.self)
+        locationService?.getCurrentLocation { location in
             Logger.viewCycle.info("Location Lat: \(location.coordinate.latitude) Location Lon: \(location.coordinate.longitude)")
         }
     }
