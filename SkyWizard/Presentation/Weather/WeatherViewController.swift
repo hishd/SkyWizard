@@ -28,7 +28,7 @@ class WeatherViewController: UIViewController {
     
     private func getWeather() async {
         do {
-            let result: WeatherResult = try await getWeatherForCurrentLocation()
+//            let result: WeatherResult = try await getWeatherForCurrentLocation()
 //            dump(result)
         } catch {
             showMessage(title: "Error", message: error.localizedDescription)
