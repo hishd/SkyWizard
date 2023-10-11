@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import OSLog
 
 class SettingsViewController: UIViewController {
     
@@ -16,6 +17,14 @@ class SettingsViewController: UIViewController {
         
         view.addSubview(primaryView)
         primaryView.fillSuperViewSafeArea()
+        
+        primaryView.onSettingTapped = { [weak self] option in
+            self?.handleSettingsNavigation(for: option)
+        }
+    }
+    
+    private func handleSettingsNavigation(for option: SettingsOptions) {
+        Logger.viewCycle.info("Selected Setting : \(option.title)")
     }
 }
 

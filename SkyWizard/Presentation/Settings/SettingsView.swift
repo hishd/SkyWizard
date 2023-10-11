@@ -12,6 +12,8 @@ class SettingsView: UIView {
     
     private let viewModel = SettingsViewModel()
     
+    var onSettingTapped: ((SettingsOptions) -> (Void))?
+    
     private typealias settingsCell = SettingsCell
     private let settingsCellId: String = "settingsCell"
     private lazy var mainTableView: UITableView = {
@@ -60,6 +62,11 @@ extension SettingsView: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let option = viewModel.options[indexPath.row]
+        onSettingTapped?(option)
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
 }
