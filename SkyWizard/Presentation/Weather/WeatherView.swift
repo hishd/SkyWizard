@@ -9,6 +9,11 @@ import Foundation
 import UIKit
 
 class WeatherView: UIView {
+    
+    private let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: <#T##UICollectionViewLayout#>)
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .cyan
@@ -16,5 +21,9 @@ class WeatherView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    public func loadWeatherData() {
+        
     }
 }

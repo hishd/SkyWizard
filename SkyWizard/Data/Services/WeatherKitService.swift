@@ -19,8 +19,8 @@ final class WeatherKitService {
             let result = try await service.weather(for: location)
             return WeatherResult(
                 currentWeather: result.currentWeather,
-                hourlyForecaset: result.hourlyForecast,
-                dailyForecast: result.dailyForecast
+                hourlyForecaset: result.hourlyForecast.forecast,
+                dailyForecast: result.dailyForecast.forecast
             )
         } catch {
             Logger.viewCycle.error("WeatherKit Error : \(error.localizedDescription)")
@@ -32,7 +32,7 @@ final class WeatherKitService {
 extension WeatherKitService {
     public struct WeatherResult {
         let currentWeather: CurrentWeather
-        let hourlyForecaset: Forecast<HourWeather>
-        let dailyForecast: Forecast<DayWeather>
+        let hourlyForecaset: [HourWeather]
+        let dailyForecast: [DayWeather]
     }
 }

@@ -30,6 +30,7 @@ class WeatherViewController: UIViewController {
         do {
 //            let result: WeatherResult = try await getWeatherForCurrentLocation()
 //            dump(result)
+//            primaryView.loadWeatherData()
         } catch {
             showMessage(title: "Error", message: error.localizedDescription)
         }
