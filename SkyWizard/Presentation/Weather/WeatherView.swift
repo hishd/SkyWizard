@@ -18,6 +18,11 @@ class WeatherView: UIView {
         return gradient
     }()
     
+    let temperatureLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFon
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
