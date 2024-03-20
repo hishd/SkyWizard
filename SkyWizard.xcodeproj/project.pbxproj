@@ -173,6 +173,7 @@
 		FD7F07952AD5918A0064FE0C /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FDFEB6672BAB7F9E0027AB83 /* SubView */,
 				FD7F07782AD582620064FE0C /* WeatherViewController.swift */,
 				FD7F079E2AD596FD0064FE0C /* WeatherView.swift */,
 				FD8336092AE091AF008D08FA /* WeatherViewModel.swift */,
@@ -211,6 +212,13 @@
 				FD8336112AE174D6008D08FA /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FDFEB6672BAB7F9E0027AB83 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

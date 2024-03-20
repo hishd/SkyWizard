@@ -83,6 +83,8 @@ extension WeatherViewController {
             break
         }
         
+        changeHouseImage(for: type)
+        
         func changeGradientColor(colorTop: UIColor?, colorBottom: UIColor?, style: UIStatusBarStyle = .default) {
             let gradientAnimation = CABasicAnimation(keyPath: "colors")
             gradientAnimation.duration = 1.0
@@ -146,8 +148,37 @@ extension WeatherViewController {
             image = UIImage(named: "ic_night_rainy")
         }
         
-        UIView.transition(with: self.primaryView.weatherImage, duration: 1.2, options: .transitionCrossDissolve) {
-            self.primaryView.weatherImage.image = image
+        UIView.transition(with: self.primaryView.weatherImageView, duration: 1.2, options: .transitionCrossDissolve) {
+            self.primaryView.weatherImageView.image = image
+        }
+    }
+    
+    func changeHouseImage(for type: WeatherViewModel.WeatherType?) {
+        guard let type = type else {
+            return
+        }
+        
+        var image: UIImage?
+        
+        switch type {
+        case .day_sunny:
+            image = UIImage(named: "house_day_sunny")
+        case .day_cloudy:
+            image = UIImage(named: "house_day_cloudy")
+        case .day_rainy:
+            image = UIImage(named: "house_day_rainy")
+        case .day_snow:
+            image = UIImage(named: "house_day_snow")
+        case .night_clear:
+            image = UIImage(named: "house_night_clear")
+        case .night_cloudy:
+            image = UIImage(named: "house_night_cloudy")
+        case .night_rainy:
+            image = UIImage(named: "house_night_rainy")
+        }
+        
+        UIView.transition(with: self.primaryView.houseImageView, duration: 1.2, options: .transitionCrossDissolve) {
+            self.primaryView.houseImageView.image = image
         }
     }
 }

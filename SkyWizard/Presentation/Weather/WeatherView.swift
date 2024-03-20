@@ -82,9 +82,17 @@ class WeatherView: UIView {
         return button
     }()
     
-    lazy var weatherImage: UIImageView = {
+    lazy var weatherImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "ic_day_sunny")
+        return imageView
+    }()
+    
+    lazy var houseImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(named: "house_day_cloudy")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -98,7 +106,8 @@ class WeatherView: UIView {
         addSubview(temperatureLowDegreesLabel)
         addSubview(cityNameLabel)
         addSubview(locationButton)
-        addSubview(weatherImage)
+        addSubview(weatherImageView)
+        addSubview(houseImageView)
         
         temperatureLabel.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(32)
@@ -141,10 +150,17 @@ class WeatherView: UIView {
             make.left.equalTo(cityNameLabel.snp.right).offset(10)
         }
         
-        weatherImage.snp.makeConstraints { make in
+        weatherImageView.snp.makeConstraints { make in
             make.width.height.equalTo(168)
             make.top.equalTo(safeAreaLayoutGuide).offset(18)
             make.right.equalTo(safeAreaLayoutGuide).offset(-10)
+        }
+        
+        houseImageView.snp.makeConstraints { make in
+            make.top.equalTo(cityNameLabel.snp.bottom)
+            make.left.equalTo(safeAreaLayoutGuide).offset(5)
+            make.right.equalTo(safeAreaLayoutGuide).offset(-5)
+            make.height.equalTo(440)
         }
     }
     
