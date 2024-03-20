@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import SnapKit
 
 class SettingsView: UIView {
     
@@ -38,12 +39,9 @@ class SettingsView: UIView {
         mainTableView.dataSource = self
 
         addSubview(mainTableView)
-        mainTableView.anchor(
-            top: safeAreaLayoutGuide.topAnchor,
-            left: safeAreaLayoutGuide.leftAnchor,
-            bottom: safeAreaLayoutGuide.bottomAnchor,
-            right: safeAreaLayoutGuide.rightAnchor
-        )
+        mainTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         mainTableView.reloadData()
     }

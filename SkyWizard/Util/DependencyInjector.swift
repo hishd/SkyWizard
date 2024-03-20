@@ -21,8 +21,8 @@ final class DependencyInjector {
         container.register(IAPService.self) { _ in
             IAPService()
         }
-        container.register(WeatherKitService.self) { _ in
-            WeatherKitService()
+        container.register(WeatherService.self) { _ in
+            WeatherService()
         }
         return container
     }()

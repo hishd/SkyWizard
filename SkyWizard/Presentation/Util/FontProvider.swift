@@ -18,14 +18,11 @@ class FontProvider {
         case semiBold = "Montserrat-SemiBold"
     }
     
-    private var customFont: UIFont?
-    public let shared = FontProvider()
+    public static let shared = FontProvider()
     
-    private init(typeFace: CustomFonts = .regular, fontSize: CGFloat = 10.0) {
-        customFont = UIFont(name: CustomFonts.regular.rawValue, size: fontSize)
-    }
+    private init() {}
     
     public func getFont(typeFace: CustomFonts = .regular, fontSize: CGFloat = 10.0) -> UIFont {
-        UIFont(name: CustomFonts.regular.rawValue, size: fontSize) ?? .systemFont(ofSize: fontSize)
+        UIFont(name: typeFace.rawValue, size: fontSize) ?? .systemFont(ofSize: fontSize)
     }
 }
