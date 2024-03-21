@@ -23,8 +23,7 @@
 		FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079E2AD596FD0064FE0C /* WeatherView.swift */; };
 		FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A12AD599080064FE0C /* View+Extensions.swift */; };
 		FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */; };
-		FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */; };
-		FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FD7F07B22AD5BF990064FE0C /* Swinject */; };
+		FD7F07AB2AD5B96B0064FE0C /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */; };
 		FD83360A2AE091B0008D08FA /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8336092AE091AF008D08FA /* WeatherViewModel.swift */; };
 		FD83360E2AE0ACDF008D08FA /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */; };
 		FD8336162AE174D7008D08FA /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336102AE174D6008D08FA /* Montserrat-Medium.ttf */; };
@@ -35,6 +34,10 @@
 		FD83361B2AE174D7008D08FA /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */; };
 		FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83361C2AE17B72008D08FA /* FontProvider.swift */; };
 		FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDFEB6652BAA68630027AB83 /* SnapKit */; };
+		FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */; };
+		FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */; };
+		FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */; };
+		FDFEB66F2BABC2E90027AB83 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +60,7 @@
 		FD7F079E2AD596FD0064FE0C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD7F07A12AD599080064FE0C /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
-		FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		FD8336092AE091AF008D08FA /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
 		FD8336102AE174D6008D08FA /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
@@ -67,6 +70,10 @@
 		FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FD83361C2AE17B72008D08FA /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSwipeUpView.swift; sourceTree = "<group>"; };
+		FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */,
 				FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,8 +140,10 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */,
-				FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */,
+				FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */,
 				FD183AED2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift */,
+				FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */,
+				FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -197,6 +205,7 @@
 				FD7F07A12AD599080064FE0C /* View+Extensions.swift */,
 				FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */,
 				FD83361C2AE17B72008D08FA /* FontProvider.swift */,
+				FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -217,6 +226,7 @@
 		FDFEB6672BAB7F9E0027AB83 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
+				FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */,
 			);
 			path = SubView;
 			sourceTree = "<group>";
@@ -238,7 +248,6 @@
 			);
 			name = SkyWizard;
 			packageProductDependencies = (
-				FD7F07B22AD5BF990064FE0C /* Swinject */,
 				FDFEB6652BAA68630027AB83 /* SnapKit */,
 			);
 			productName = SkyWizard;
@@ -309,13 +318,17 @@
 				FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */,
 				FD1902EC2BA12B3900287011 /* WeatherResult.swift in Sources */,
 				FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */,
+				FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */,
+				FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */,
 				FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */,
 				FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */,
+				FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */,
 				FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD83360E2AE0ACDF008D08FA /* NavigationContainer.swift in Sources */,
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
-				FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */,
+				FDFEB66F2BABC2E90027AB83 /* AppConfig.swift in Sources */,
+				FD7F07AB2AD5B96B0064FE0C /* DependencyManager.swift in Sources */,
 				FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */,
 				FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */,
 				FD83360A2AE091B0008D08FA /* WeatherViewModel.swift in Sources */,
@@ -562,11 +575,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FD7F07B22AD5BF990064FE0C /* Swinject */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
-		};
 		FDFEB6652BAA68630027AB83 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */;

@@ -10,9 +10,7 @@ import OSLog
 import Combine
 
 class WeatherViewModel {
-    
-    let injector = DependencyInjector.shared.container
-    
+        
     @Published private(set) var weatherType: WeatherType?
     var cancellable: AnyCancellable?
     

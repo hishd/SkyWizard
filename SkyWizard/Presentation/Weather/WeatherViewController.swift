@@ -16,6 +16,18 @@ class WeatherViewController: UIViewController {
     
     private var cancellables = Set<AnyCancellable>();
     
+    let bottomSheetView = BottomSwipeUpView()
+    var bottomSheetOffset: CGFloat = 190
+    var bottomSheetBottomOffsetConstraint = NSLayoutConstraint()
+    var bottomSheetState: BottomSheetViewState = .closed
+    var bottomSheetRunningAnimator:UIViewPropertyAnimator?
+    var bottomSheetAnimationProgress = CGFloat()
+    lazy var bottomSheetPanGestureRecognizer: CustomPanGestureRecognizer = {
+        let gestureRecognizer = CustomPanGestureRecognizer()
+        gestureRecognizer.addTarget(self, action: #selector(bottomSheetPanned(recognizer:)))
+        return gestureRecognizer
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +36,8 @@ class WeatherViewController: UIViewController {
         primaryView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        setupBottomSheetView()
         
         setupBindings()
     }
@@ -44,6 +58,131 @@ class WeatherViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+}
+
+extension WeatherViewController {
+    func setupBottomSheetView() {
+        view.addSubview(bottomSheetView)
+        bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
+        bottomSheetView.snp.makeConstraints { make in
+            make.left.equalTo(additionalSafeAreaInsets).offset(20)
+            make.right.equalTo(additionalSafeAreaInsets).offset(-20)
+            make.height.equalTo(480)
+        }
+        bottomSheetBottomOffsetConstraint = bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomSheetOffset)
+        bottomSheetBottomOffsetConstraint.isActive = true
+        bottomSheetView.addGestureRecognizer(bottomSheetPanGestureRecognizer)
+    }
+    
+    private func animateTransitionIfNeeded(to state: BottomSheetViewState, duration: TimeInterval) {
+            
+        // ensure that the animators array is empty (which implies new animations need to be created)
+        guard bottomSheetRunningAnimator == nil else { return }
+        
+        // an animator for the transition
+        let transitionAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1, animations: {
+            switch state {
+            case .open:
+                self.bottomSheetBottomOffsetConstraint.constant = 0
+            case .closed:
+                self.bottomSheetBottomOffsetConstraint.constant = self.bottomSheetOffset
+            }
+            self.view.layoutIfNeeded()
+        })
+        
+        // the transition completion block
+        transitionAnimator.addCompletion { position in
+            // update the state
+            switch position {
+            case .start:
+                self.bottomSheetState = state.flippedState
+            case .end:
+                self.bottomSheetState = state
+            case .current:
+                ()
+            @unknown default:
+                fatalError()
+            }
+            
+            // manually reset the constraint positions
+            switch self.bottomSheetState {
+            case .open:
+                self.bottomSheetBottomOffsetConstraint.constant = 0
+            case .closed:
+                self.bottomSheetBottomOffsetConstraint.constant = self.bottomSheetOffset
+            }
+            
+            // remove all running animators
+            self.bottomSheetRunningAnimator = nil
+        }
+        
+        // start all animators
+        transitionAnimator.startAnimation()
+        
+        // keep track of all running animators
+        bottomSheetRunningAnimator = transitionAnimator
+    }
+    
+    @objc private func bottomSheetPanned(recognizer: UIPanGestureRecognizer) {
+            switch recognizer.state {
+            case .began:
+                
+                // start the animations
+                animateTransitionIfNeeded(to: bottomSheetState.flippedState, duration: 1)
+                
+                // pause all animations, since the next event may be a pan changed
+                bottomSheetRunningAnimator?.pauseAnimation()
+                
+                // keep track of each animator's progress
+                bottomSheetAnimationProgress = bottomSheetRunningAnimator?.fractionComplete ?? 0
+                
+            case .changed:
+                
+                // variable setup
+                let translation = recognizer.translation(in: bottomSheetView)
+                var fraction = -translation.y / bottomSheetOffset
+                
+                // adjust the fraction for the current state and reversed state
+                if bottomSheetState == .open { fraction *= -1 }
+                if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
+                    if bottomSheetRunningAnimator.isReversed { fraction *= -1 }
+                }
+                
+                // apply the new fraction
+                bottomSheetRunningAnimator?.fractionComplete = fraction + bottomSheetAnimationProgress
+                
+                
+            case .ended:
+                
+                // variable setup
+                let yVelocity = recognizer.velocity(in: bottomSheetView).y
+                let shouldClose = yVelocity > 0
+                
+                // if there is no motion, continue all animations and exit early
+                if yVelocity == 0 {
+                    bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+                    break
+                }
+                
+                if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
+                    switch bottomSheetState {
+                    case .open:
+                        if !shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                        if shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                    case .closed:
+                        if shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                        if !shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                    }
+                }
+                // reverse the animations based on their current state and pan motion
+                
+                // continue all animations
+                bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+                
+            default:
+                ()
+            }
+        }
 }
 
 extension WeatherViewController {
