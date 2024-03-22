@@ -44,6 +44,6 @@ class Resolver {
 class DependencyManager {
     //let dependency: Type (conforms to Injectable)
     init() {
-        //Resolver.add(dependency)
+        //Resolver.shared.add(dependency)
     }
 }
