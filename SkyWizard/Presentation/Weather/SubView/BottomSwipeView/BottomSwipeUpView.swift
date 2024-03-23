@@ -21,14 +21,19 @@ extension BottomSheetViewState {
 
 class BottomSwipeUpView: UIView {
     
+    private lazy var roundCornerHandle: UIView = {
+        let view = UIView()
+        let rect = CGRect(x: 0, y: 0, width: 66, height: 6)
+        let layer = CAShapeLayer()
+        layer.frame = rect
+        layer.backgroundColor = UIColor.gray.cgColor
+        layer.cornerRadius = 3
+        view.layer.addSublayer(layer)
+        return view
+    }()
+    
     lazy var roundCornerHandleView: UIView = {
         let view = UIView()
-        let rect = CGRect(x:-33, y: 0, width: 66, height: 6)
-        let path = UIBezierPath(roundedRect: rect, cornerRadius: 10)
-        let layer = CAShapeLayer()
-        layer.fillColor = UIColor.gray.cgColor
-        layer.path = path.cgPath
-        view.layer.addSublayer(layer)
         return view
     }()
     
@@ -55,6 +60,12 @@ class BottomSwipeUpView: UIView {
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: 12).cgPath
     }
     
     func setupUI() {
@@ -85,9 +96,19 @@ class BottomSwipeUpView: UIView {
         }
 
         topContainerView.addSubview(roundCornerHandleView)
+        
         roundCornerHandleView.snp.makeConstraints { make in
-            make.centerX.equalTo(topContainerView)
+            make.top.equalTo(topContainerView)
+            make.left.right.equalTo(topContainerView)
+            make.height.equalTo(60)
+        }
+        
+        roundCornerHandleView.addSubview(roundCornerHandle)
+        roundCornerHandle.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
             make.top.equalTo(20)
+            make.width.equalTo(66)
+            make.height.equalTo(6)
         }
         
         bottomContainerView.snp.makeConstraints { make in
