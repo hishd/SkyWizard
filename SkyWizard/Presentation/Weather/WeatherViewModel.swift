@@ -33,14 +33,4 @@ class WeatherViewModel {
     private func getWeatherForCurrentLocation() async throws -> WeatherResult? {
         return nil
     }
-    
-    enum WeatherType: CaseIterable {
-        case day_sunny
-        case day_cloudy
-        case day_rainy
-        case day_snow
-        case night_clear
-        case night_cloudy
-        case night_rainy
-    }
 }
