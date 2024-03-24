@@ -38,6 +38,10 @@
 		FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */; };
 		FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */; };
 		FDFEB66F2BABC2E90027AB83 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */; };
+		FDFEB6762BB269520027AB83 /* HourlyWeatherViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */; };
+		FDFEB6782BB26FD60027AB83 /* HourlyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */; };
+		FDFEB67A2BB2728C0027AB83 /* HourlyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */; };
+		FDFEB67D2BB273FF0027AB83 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +78,10 @@
 		FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewCell.swift; sourceTree = "<group>"; };
+		FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewController.swift; sourceTree = "<group>"; };
+		FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItem.swift; sourceTree = "<group>"; };
+		FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,7 @@
 		FD7F078A2AD58E7E0064FE0C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FDFEB67B2BB273F20027AB83 /* Enum */,
 				FD7F078D2AD58E990064FE0C /* Services */,
 				FD7F078C2AD58E940064FE0C /* Models */,
 			);
@@ -226,9 +235,44 @@
 		FDFEB6672BAB7F9E0027AB83 /* SubView */ = {
 			isa = PBXGroup;
 			children = (
-				FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */,
+				FDFEB6722BB268880027AB83 /* DailyWeatherView */,
+				FDFEB6712BB268660027AB83 /* HourlyWeatherView */,
+				FDFEB6702BB268470027AB83 /* BottomSwipeView */,
 			);
 			path = SubView;
+			sourceTree = "<group>";
+		};
+		FDFEB6702BB268470027AB83 /* BottomSwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */,
+			);
+			path = BottomSwipeView;
+			sourceTree = "<group>";
+		};
+		FDFEB6712BB268660027AB83 /* HourlyWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */,
+				FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */,
+				FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */,
+			);
+			path = HourlyWeatherView;
+			sourceTree = "<group>";
+		};
+		FDFEB6722BB268880027AB83 /* DailyWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyWeatherView;
+			sourceTree = "<group>";
+		};
+		FDFEB67B2BB273F20027AB83 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +323,6 @@
 			);
 			mainGroup = FD7F07682AD582620064FE0C;
 			packageReferences = (
-				FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */,
 				FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FD7F07722AD582620064FE0C /* Products */;
@@ -314,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFEB67A2BB2728C0027AB83 /* HourlyWeatherItem.swift in Sources */,
 				FD7F07792AD582620064FE0C /* WeatherViewController.swift in Sources */,
 				FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */,
 				FD1902EC2BA12B3900287011 /* WeatherResult.swift in Sources */,
@@ -323,6 +367,7 @@
 				FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */,
 				FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */,
 				FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */,
+				FDFEB67D2BB273FF0027AB83 /* WeatherType.swift in Sources */,
 				FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD83360E2AE0ACDF008D08FA /* NavigationContainer.swift in Sources */,
@@ -333,7 +378,9 @@
 				FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */,
 				FD83360A2AE091B0008D08FA /* WeatherViewModel.swift in Sources */,
 				FD183AEE2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift in Sources */,
+				FDFEB6782BB26FD60027AB83 /* HourlyWeatherViewController.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,
+				FDFEB6762BB269520027AB83 /* HourlyWeatherViewCell.swift in Sources */,
 				FD7F07942AD58F5C0064FE0C /* WeatherService.swift in Sources */,
 				FD5B09C62AD6D5BF0005A6EF /* SettingsCell.swift in Sources */,
 			);
@@ -556,14 +603,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
-			};
-		};
 		FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";

@@ -9,36 +9,51 @@ import UIKit
 import Combine
 import SnapKit
 
-class WeatherViewController: UIViewController {
+//extension WeatherViewController: UIGestureRecognizerDelegate {
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+//        if let view = gestureRecognizer.view {
+//            print(String(describing: type(of: view.self)))
+//        }
+//        if let view = gestureRecognizer.view, view.isKind(of: UICollectionView.self) {
+//            print("Collectionview")
+//        }
+//        print("........")
+//        return false
+//    }
+//}
+
+final class WeatherViewController: UIViewController {
     
-    let primaryView = WeatherView()
-    let viewModel: WeatherViewModel = WeatherViewModel()
+    private let primaryView = WeatherView()
+    private let viewModel: WeatherViewModel
     
     private var cancellables = Set<AnyCancellable>();
     
-    let bottomSheetView = BottomSwipeUpView()
-    var bottomSheetOffset: CGFloat = 190
-    var bottomSheetBottomOffsetConstraint = NSLayoutConstraint()
-    var bottomSheetState: BottomSheetViewState = .closed
-    var bottomSheetRunningAnimator:UIViewPropertyAnimator?
-    var bottomSheetAnimationProgress = CGFloat()
-    lazy var bottomSheetPanGestureRecognizer: CustomPanGestureRecognizer = {
+    private let bottomSheetView = BottomSwipeUpView()
+    private var bottomSheetOffset: CGFloat = 190
+    private var bottomSheetBottomOffsetConstraint = NSLayoutConstraint()
+    private var bottomSheetState: BottomSheetViewState = .closed
+    private var bottomSheetRunningAnimator:UIViewPropertyAnimator?
+    private var bottomSheetAnimationProgress = CGFloat()
+    private lazy var bottomSheetPanGestureRecognizer: CustomPanGestureRecognizer = {
         let gestureRecognizer = CustomPanGestureRecognizer()
         gestureRecognizer.addTarget(self, action: #selector(bottomSheetPanned(recognizer:)))
+//        gestureRecognizer.delegate = self
         return gestureRecognizer
     }()
     
+    init(viewModel: WeatherViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.addSubview(primaryView)
-        navigationController?.isNavigationBarHidden = true
-        primaryView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        
-        setupBottomSheetView()
-        
+        setupUI()
         setupBindings()
     }
     
@@ -46,6 +61,17 @@ class WeatherViewController: UIViewController {
         super.viewDidAppear(animated)
         self.primaryView.gradientBackground.frame = self.primaryView.bounds
         self.primaryView.layer.insertSublayer(self.primaryView.gradientBackground, at: 0)
+    }
+    
+    private func setupUI() {
+        view.addSubview(primaryView)
+        navigationController?.isNavigationBarHidden = true
+        primaryView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        setupBottomSheetView()
+        setupChildViews()
     }
     
     private func setupBindings() {
@@ -58,10 +84,39 @@ class WeatherViewController: UIViewController {
             }
             .store(in: &cancellables)
     }
+    
+    let hourlyWeatherViewController = HourlyWeatherViewController()
+    private func setupChildViews() {
+        //Child view controllers for bottom sheet view
+    //    let dailyWeatherViewController = DailyWeatherViewController()
+        
+        bottomSheetView.topContainerView.addSubview(hourlyWeatherViewController.view)
+        hourlyWeatherViewController.view.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalToSuperview().offset(32)
+            make.bottom.equalToSuperview()
+        }
+        
+        var sampleData:[HourlyWeatherItem] = []
+        sampleData.append(HourlyWeatherItem(time: "10 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        sampleData.append(HourlyWeatherItem(time: "11 am", image: UIImage(named: "ic_day_sunny")!, temperature: 22))
+        
+        primaryView.locationButton.addAction(UIAction(handler: { _ in
+            self.hourlyWeatherViewController.populateData(data: sampleData)
+            print("sending values")
+        }), for: .touchUpInside)
+    }
 }
 
 extension WeatherViewController {
-    func setupBottomSheetView() {
+    private func setupBottomSheetView() {
         view.addSubview(bottomSheetView)
         bottomSheetView.translatesAutoresizingMaskIntoConstraints = false
         bottomSheetView.snp.makeConstraints { make in
@@ -71,7 +126,7 @@ extension WeatherViewController {
         }
         bottomSheetBottomOffsetConstraint = bottomSheetView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: bottomSheetOffset)
         bottomSheetBottomOffsetConstraint.isActive = true
-        bottomSheetView.addGestureRecognizer(bottomSheetPanGestureRecognizer)
+        bottomSheetView.roundCornerHandleView.addGestureRecognizer(bottomSheetPanGestureRecognizer)
     }
     
     private func animateTransitionIfNeeded(to state: BottomSheetViewState, duration: TimeInterval) {
@@ -124,69 +179,69 @@ extension WeatherViewController {
     }
     
     @objc private func bottomSheetPanned(recognizer: UIPanGestureRecognizer) {
-            switch recognizer.state {
-            case .began:
-                
-                // start the animations
-                animateTransitionIfNeeded(to: bottomSheetState.flippedState, duration: 1)
-                
-                // pause all animations, since the next event may be a pan changed
-                bottomSheetRunningAnimator?.pauseAnimation()
-                
-                // keep track of each animator's progress
-                bottomSheetAnimationProgress = bottomSheetRunningAnimator?.fractionComplete ?? 0
-                
-            case .changed:
-                
-                // variable setup
-                let translation = recognizer.translation(in: bottomSheetView)
-                var fraction = -translation.y / bottomSheetOffset
-                
-                // adjust the fraction for the current state and reversed state
-                if bottomSheetState == .open { fraction *= -1 }
-                if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
-                    if bottomSheetRunningAnimator.isReversed { fraction *= -1 }
-                }
-                
-                // apply the new fraction
-                bottomSheetRunningAnimator?.fractionComplete = fraction + bottomSheetAnimationProgress
-                
-                
-            case .ended:
-                
-                // variable setup
-                let yVelocity = recognizer.velocity(in: bottomSheetView).y
-                let shouldClose = yVelocity > 0
-                
-                // if there is no motion, continue all animations and exit early
-                if yVelocity == 0 {
-                    bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-                    break
-                }
-                
-                if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
-                    switch bottomSheetState {
-                    case .open:
-                        if !shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
-                        if shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
-                    case .closed:
-                        if shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
-                        if !shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
-                    }
-                }
-                // reverse the animations based on their current state and pan motion
-                
-                // continue all animations
-                bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
-                
-            default:
-                ()
+        switch recognizer.state {
+        case .began:
+            
+            // start the animations
+            animateTransitionIfNeeded(to: bottomSheetState.flippedState, duration: 1)
+            
+            // pause all animations, since the next event may be a pan changed
+            bottomSheetRunningAnimator?.pauseAnimation()
+            
+            // keep track of each animator's progress
+            bottomSheetAnimationProgress = bottomSheetRunningAnimator?.fractionComplete ?? 0
+            
+        case .changed:
+            
+            // variable setup
+            let translation = recognizer.translation(in: bottomSheetView)
+            var fraction = -translation.y / bottomSheetOffset
+            
+            // adjust the fraction for the current state and reversed state
+            if bottomSheetState == .open { fraction *= -1 }
+            if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
+                if bottomSheetRunningAnimator.isReversed { fraction *= -1 }
             }
+            
+            // apply the new fraction
+            bottomSheetRunningAnimator?.fractionComplete = fraction + bottomSheetAnimationProgress
+            
+            
+        case .ended:
+            
+            // variable setup
+            let yVelocity = recognizer.velocity(in: bottomSheetView).y
+            let shouldClose = yVelocity > 0
+            
+            // if there is no motion, continue all animations and exit early
+            if yVelocity == 0 {
+                bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+                break
+            }
+            
+            if let bottomSheetRunningAnimator = bottomSheetRunningAnimator {
+                switch bottomSheetState {
+                case .open:
+                    if !shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                    if shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                case .closed:
+                    if shouldClose && !bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                    if !shouldClose && bottomSheetRunningAnimator.isReversed { bottomSheetRunningAnimator.isReversed = !bottomSheetRunningAnimator.isReversed }
+                }
+            }
+            // reverse the animations based on their current state and pan motion
+            
+            // continue all animations
+            bottomSheetRunningAnimator?.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+            
+        default:
+            ()
         }
+    }
 }
 
 extension WeatherViewController {
-    private func changeThemeColors(for type: WeatherViewModel.WeatherType?) {
+    private func changeThemeColors(for type: WeatherType?) {
         guard let type = type else {
             return
         }
@@ -263,7 +318,7 @@ extension WeatherViewController {
         }
     }
     
-    func changeWeatherImage(for type: WeatherViewModel.WeatherType?) {
+    private func changeWeatherImage(for type: WeatherType?) {
         guard let type = type else {
             return
         }
@@ -292,7 +347,7 @@ extension WeatherViewController {
         }
     }
     
-    func changeHouseImage(for type: WeatherViewModel.WeatherType?) {
+    private func changeHouseImage(for type: WeatherType?) {
         guard let type = type else {
             return
         }
