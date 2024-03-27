@@ -6,30 +6,35 @@
 //
 
 import UIKit
+import SnapKit
 
 
 class SettingsCell: UITableViewCell {
     
     let titleLabel: UILabel = {
        let label = UILabel()
-        label.textColor = UIColor(named: "labelColor")
+        label.textColor = UIColor(named: "titleLabelColor")
         label.font = .systemFont(ofSize: 15, weight: .regular)
         return label
     }()
     
     let imageIcon: UIImageView = {
        let imageView = UIImageView()
-        imageView.setDimensions(height: 40, width: 40)
+        imageView.snp.makeConstraints { make in
+            make.width.height.equalTo(40)
+        }
         imageView.contentMode = .scaleToFill
-        imageView.tintColor = UIColor(named: "labelColor")
+        imageView.tintColor = UIColor(named: "titleLabelColor")
         return imageView
     }()
     
     let rightIcon: UIImageView = {
        let imageView = UIImageView(image: UIImage(systemName: "chevron.right"))
-        imageView.setHeight(of: 22)
+        imageView.snp.makeConstraints { make in
+            make.height.equalTo(22)
+        }
         imageView.contentMode = .scaleToFill
-        imageView.tintColor = UIColor(named: "labelColor")
+        imageView.tintColor = UIColor(named: "titleLabelColor")
         return imageView
     }()
     
@@ -49,15 +54,25 @@ class SettingsCell: UITableViewCell {
         view.addSubview(titleLabel)
         view.addSubview(rightIcon)
         
-        imageIcon.anchor(left: view.leftAnchor, paddingLeft: 10)
-        imageIcon.centerY(inView: view)
-        titleLabel.centerY(inView: view)
-        titleLabel.anchor(left: imageIcon.rightAnchor, paddingLeft: 12)
-        rightIcon.centerY(inView: view)
-        rightIcon.anchor(right: view.rightAnchor, paddingRight: 20)
+        imageIcon.snp.makeConstraints { make in
+            make.left.equalTo(view).offset(10)
+            make.centerY.equalTo(view)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(view)
+            make.left.equalTo(imageIcon.snp.right).offset(12)
+        }
+        
+        rightIcon.snp.makeConstraints { make in
+            make.centerY.equalTo(view)
+            make.right.equalTo(view.snp.right).offset(-20)
+        }
         
         addSubview(view)
-        view.anchor(top: topAnchor, left: leftAnchor, bottom: bottomAnchor, right: rightAnchor, paddingTop: 10)
+        view.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     public func configureView(with title: String, iconName: String) {

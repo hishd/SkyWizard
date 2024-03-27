@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD183AEE2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD183AED2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift */; };
+		FD1902EC2BA12B3900287011 /* WeatherResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1902EB2BA12B3900287011 /* WeatherResult.swift */; };
 		FD5B09C62AD6D5BF0005A6EF /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5B09C52AD6D5BF0005A6EF /* SettingsCell.swift */; };
 		FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07742AD582620064FE0C /* AppDelegate.swift */; };
 		FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07762AD582620064FE0C /* SceneDelegate.swift */; };
@@ -15,20 +17,36 @@
 		FD7F07812AD582670064FE0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */; };
 		FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F078F2AD58F2E0064FE0C /* LocationService.swift */; };
 		FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07912AD58F380064FE0C /* IAPService.swift */; };
-		FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */; };
+		FD7F07942AD58F5C0064FE0C /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07932AD58F5C0064FE0C /* WeatherService.swift */; };
 		FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */; };
 		FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079C2AD5968A0064FE0C /* SettingsView.swift */; };
 		FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F079E2AD596FD0064FE0C /* WeatherView.swift */; };
 		FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A12AD599080064FE0C /* View+Extensions.swift */; };
 		FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */; };
-		FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */; };
-		FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = FD7F07B22AD5BF990064FE0C /* Swinject */; };
+		FD7F07AB2AD5B96B0064FE0C /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */; };
 		FD83360A2AE091B0008D08FA /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8336092AE091AF008D08FA /* WeatherViewModel.swift */; };
 		FD83360E2AE0ACDF008D08FA /* NavigationContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */; };
-		FDCA650D2AD6040700E4DD4C /* ApplicationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */; };
+		FD8336162AE174D7008D08FA /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336102AE174D6008D08FA /* Montserrat-Medium.ttf */; };
+		FD8336172AE174D7008D08FA /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336112AE174D6008D08FA /* Montserrat-SemiBold.ttf */; };
+		FD8336182AE174D7008D08FA /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336122AE174D6008D08FA /* Montserrat-Black.ttf */; };
+		FD8336192AE174D7008D08FA /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336132AE174D6008D08FA /* Montserrat-Bold.ttf */; };
+		FD83361A2AE174D7008D08FA /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */; };
+		FD83361B2AE174D7008D08FA /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */; };
+		FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83361C2AE17B72008D08FA /* FontProvider.swift */; };
+		FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDFEB6652BAA68630027AB83 /* SnapKit */; };
+		FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */; };
+		FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */; };
+		FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */; };
+		FDFEB66F2BABC2E90027AB83 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */; };
+		FDFEB6762BB269520027AB83 /* HourlyWeatherViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */; };
+		FDFEB6782BB26FD60027AB83 /* HourlyWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */; };
+		FDFEB67A2BB2728C0027AB83 /* HourlyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */; };
+		FDFEB67D2BB273FF0027AB83 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD183AED2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Wrapper.swift"; sourceTree = "<group>"; };
+		FD1902EB2BA12B3900287011 /* WeatherResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResult.swift; sourceTree = "<group>"; };
 		FD5B09C52AD6D5BF0005A6EF /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
 		FD7F07712AD582620064FE0C /* SkyWizard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyWizard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7F07742AD582620064FE0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,16 +58,30 @@
 		FD7F07882AD5831B0064FE0C /* SkyWizard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SkyWizard.entitlements; sourceTree = "<group>"; };
 		FD7F078F2AD58F2E0064FE0C /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		FD7F07912AD58F380064FE0C /* IAPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPService.swift; sourceTree = "<group>"; };
-		FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherKitService.swift; sourceTree = "<group>"; };
+		FD7F07932AD58F5C0064FE0C /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 		FD7F07972AD591CC0064FE0C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FD7F079C2AD5968A0064FE0C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		FD7F079E2AD596FD0064FE0C /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FD7F07A12AD599080064FE0C /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logger+Extensions.swift"; sourceTree = "<group>"; };
-		FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyInjector.swift; sourceTree = "<group>"; };
+		FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		FD8336092AE091AF008D08FA /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContainer.swift; sourceTree = "<group>"; };
-		FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationError.swift; sourceTree = "<group>"; };
+		FD8336102AE174D6008D08FA /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		FD8336112AE174D6008D08FA /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		FD8336122AE174D6008D08FA /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		FD8336132AE174D6008D08FA /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		FD83361C2AE17B72008D08FA /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSwipeUpView.swift; sourceTree = "<group>"; };
+		FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPanGestureRecognizer.swift; sourceTree = "<group>"; };
+		FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewCell.swift; sourceTree = "<group>"; };
+		FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherViewController.swift; sourceTree = "<group>"; };
+		FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherItem.swift; sourceTree = "<group>"; };
+		FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD7F07B32AD5BF990064FE0C /* Swinject in Frameworks */,
+				FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +138,7 @@
 		FD7F078A2AD58E7E0064FE0C /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FDFEB67B2BB273F20027AB83 /* Enum */,
 				FD7F078D2AD58E990064FE0C /* Services */,
 				FD7F078C2AD58E940064FE0C /* Models */,
 			);
@@ -116,8 +149,10 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07A32AD5B21C0064FE0C /* Logger+Extensions.swift */,
-				FD7F07AA2AD5B96B0064FE0C /* DependencyInjector.swift */,
-				FDCA650C2AD6040700E4DD4C /* ApplicationError.swift */,
+				FD7F07AA2AD5B96B0064FE0C /* DependencyManager.swift */,
+				FD183AED2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift */,
+				FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */,
+				FDFEB66E2BABC2E90027AB83 /* AppConfig.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -125,6 +160,7 @@
 		FD7F078C2AD58E940064FE0C /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FD1902EB2BA12B3900287011 /* WeatherResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -134,7 +170,7 @@
 			children = (
 				FD7F078F2AD58F2E0064FE0C /* LocationService.swift */,
 				FD7F07912AD58F380064FE0C /* IAPService.swift */,
-				FD7F07932AD58F5C0064FE0C /* WeatherKitService.swift */,
+				FD7F07932AD58F5C0064FE0C /* WeatherService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -142,6 +178,7 @@
 		FD7F078E2AD58EA90064FE0C /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				FD83360F2AE173ED008D08FA /* Fonts */,
 				FD7F077D2AD582670064FE0C /* Assets.xcassets */,
 				FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */,
 				FD7F07742AD582620064FE0C /* AppDelegate.swift */,
@@ -153,6 +190,7 @@
 		FD7F07952AD5918A0064FE0C /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FDFEB6672BAB7F9E0027AB83 /* SubView */,
 				FD7F07782AD582620064FE0C /* WeatherViewController.swift */,
 				FD7F079E2AD596FD0064FE0C /* WeatherView.swift */,
 				FD8336092AE091AF008D08FA /* WeatherViewModel.swift */,
@@ -175,8 +213,66 @@
 			children = (
 				FD7F07A12AD599080064FE0C /* View+Extensions.swift */,
 				FD83360D2AE0ACDF008D08FA /* NavigationContainer.swift */,
+				FD83361C2AE17B72008D08FA /* FontProvider.swift */,
+				FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		FD83360F2AE173ED008D08FA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FD8336122AE174D6008D08FA /* Montserrat-Black.ttf */,
+				FD8336132AE174D6008D08FA /* Montserrat-Bold.ttf */,
+				FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */,
+				FD8336102AE174D6008D08FA /* Montserrat-Medium.ttf */,
+				FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */,
+				FD8336112AE174D6008D08FA /* Montserrat-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FDFEB6672BAB7F9E0027AB83 /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB6722BB268880027AB83 /* DailyWeatherView */,
+				FDFEB6712BB268660027AB83 /* HourlyWeatherView */,
+				FDFEB6702BB268470027AB83 /* BottomSwipeView */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		FDFEB6702BB268470027AB83 /* BottomSwipeView */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */,
+			);
+			path = BottomSwipeView;
+			sourceTree = "<group>";
+		};
+		FDFEB6712BB268660027AB83 /* HourlyWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB6752BB269520027AB83 /* HourlyWeatherViewCell.swift */,
+				FDFEB6772BB26FD60027AB83 /* HourlyWeatherViewController.swift */,
+				FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */,
+			);
+			path = HourlyWeatherView;
+			sourceTree = "<group>";
+		};
+		FDFEB6722BB268880027AB83 /* DailyWeatherView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DailyWeatherView;
+			sourceTree = "<group>";
+		};
+		FDFEB67B2BB273F20027AB83 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,7 +292,7 @@
 			);
 			name = SkyWizard;
 			packageProductDependencies = (
-				FD7F07B22AD5BF990064FE0C /* Swinject */,
+				FDFEB6652BAA68630027AB83 /* SnapKit */,
 			);
 			productName = SkyWizard;
 			productReference = FD7F07712AD582620064FE0C /* SkyWizard.app */;
@@ -227,7 +323,7 @@
 			);
 			mainGroup = FD7F07682AD582620064FE0C;
 			packageReferences = (
-				FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */,
+				FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = FD7F07722AD582620064FE0C /* Products */;
 			projectDirPath = "";
@@ -243,7 +339,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD83361B2AE174D7008D08FA /* Montserrat-Regular.ttf in Resources */,
+				FD83361A2AE174D7008D08FA /* Montserrat-Light.ttf in Resources */,
 				FD7F07812AD582670064FE0C /* LaunchScreen.storyboard in Resources */,
+				FD8336182AE174D7008D08FA /* Montserrat-Black.ttf in Resources */,
+				FD8336192AE174D7008D08FA /* Montserrat-Bold.ttf in Resources */,
+				FD8336162AE174D7008D08FA /* Montserrat-Medium.ttf in Resources */,
+				FD8336172AE174D7008D08FA /* Montserrat-SemiBold.ttf in Resources */,
 				FD7F077E2AD582670064FE0C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,21 +357,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDFEB67A2BB2728C0027AB83 /* HourlyWeatherItem.swift in Sources */,
 				FD7F07792AD582620064FE0C /* WeatherViewController.swift in Sources */,
 				FD7F07A22AD599080064FE0C /* View+Extensions.swift in Sources */,
+				FD1902EC2BA12B3900287011 /* WeatherResult.swift in Sources */,
 				FD7F07922AD58F380064FE0C /* IAPService.swift in Sources */,
+				FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */,
+				FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */,
 				FD7F079D2AD5968A0064FE0C /* SettingsView.swift in Sources */,
 				FD7F07982AD591CC0064FE0C /* SettingsViewController.swift in Sources */,
+				FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */,
+				FDFEB67D2BB273FF0027AB83 /* WeatherType.swift in Sources */,
 				FD7F079F2AD596FD0064FE0C /* WeatherView.swift in Sources */,
 				FD7F07752AD582620064FE0C /* AppDelegate.swift in Sources */,
 				FD83360E2AE0ACDF008D08FA /* NavigationContainer.swift in Sources */,
 				FD7F07902AD58F2E0064FE0C /* LocationService.swift in Sources */,
-				FD7F07AB2AD5B96B0064FE0C /* DependencyInjector.swift in Sources */,
+				FDFEB66F2BABC2E90027AB83 /* AppConfig.swift in Sources */,
+				FD7F07AB2AD5B96B0064FE0C /* DependencyManager.swift in Sources */,
 				FD7F07A42AD5B21C0064FE0C /* Logger+Extensions.swift in Sources */,
+				FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */,
 				FD83360A2AE091B0008D08FA /* WeatherViewModel.swift in Sources */,
-				FDCA650D2AD6040700E4DD4C /* ApplicationError.swift in Sources */,
+				FD183AEE2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift in Sources */,
+				FDFEB6782BB26FD60027AB83 /* HourlyWeatherViewController.swift in Sources */,
 				FD7F07772AD582620064FE0C /* SceneDelegate.swift in Sources */,
-				FD7F07942AD58F5C0064FE0C /* WeatherKitService.swift in Sources */,
+				FDFEB6762BB269520027AB83 /* HourlyWeatherViewCell.swift in Sources */,
+				FD7F07942AD58F5C0064FE0C /* WeatherService.swift in Sources */,
 				FD5B09C62AD6D5BF0005A6EF /* SettingsCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,9 +530,11 @@
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkyWizard/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to get weather updates";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,9 +560,11 @@
 				DEVELOPMENT_TEAM = ZMV4XYT773;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkyWizard/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to get weather updates";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -487,21 +603,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */ = {
+		FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Swinject/Swinject.git";
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 2.8.0;
+				minimumVersion = 5.7.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FD7F07B22AD5BF990064FE0C /* Swinject */ = {
+		FDFEB6652BAA68630027AB83 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FD7F07B12AD5BF990064FE0C /* XCRemoteSwiftPackageReference "Swinject" */;
-			productName = Swinject;
+			package = FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

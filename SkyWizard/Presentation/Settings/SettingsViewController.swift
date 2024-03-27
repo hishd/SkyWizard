@@ -7,6 +7,7 @@
 
 import UIKit
 import OSLog
+import SnapKit
 
 class SettingsViewController: UIViewController {
     
@@ -15,8 +16,13 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.title = "Settings"
+        
         view.addSubview(primaryView)
-        primaryView.fillSuperViewSafeArea()
+        primaryView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         primaryView.onSettingTapped = { [weak self] option in
             self?.handleSettingsNavigation(for: option)
