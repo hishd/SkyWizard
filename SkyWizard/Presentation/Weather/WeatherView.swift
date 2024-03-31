@@ -24,7 +24,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .regular, fontSize: 78)
         label.text = "20"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
@@ -32,7 +32,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .regular, fontSize: 26)
         label.text = "0"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
@@ -40,7 +40,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 18)
         label.text = "H 24"
-        label.textColor = UIColor(named: "colorDarkGray")
+        label.textColor = .colorDarkGray
         return label
     }()
     
@@ -48,7 +48,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 10)
         label.text = "0"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
@@ -56,7 +56,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 18)
         label.text = "L 18"
-        label.textColor = UIColor(named: "colorDarkGray")
+        label.textColor = .colorDarkGray
         return label
     }()
     
@@ -64,7 +64,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 10)
         label.text = "0"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
@@ -72,7 +72,7 @@ class WeatherView: UIView {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 26)
         label.text = "Northampton"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
