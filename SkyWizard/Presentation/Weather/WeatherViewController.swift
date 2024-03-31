@@ -297,13 +297,13 @@ extension WeatherViewController {
         
         func changeLabelColor(switchToDarkColor: Bool) {
             if switchToDarkColor {
-                self.primaryView.temperatureLabel.textColor = UIColor(named: "colorDark")
-                self.primaryView.temperatureDegreesLabel.textColor = UIColor(named: "colorDark")
-                self.primaryView.temperatureHighLabel.textColor = UIColor(named: "colorDarkGray")
-                self.primaryView.temperatureHighDegreesLabel.textColor = UIColor(named: "colorDarkGray")
-                self.primaryView.temperatureLowLabel.textColor = UIColor(named: "colorDarkGray")
-                self.primaryView.temperatureLowDegreesLabel.textColor = UIColor(named: "colorDarkGray")
-                self.primaryView.cityNameLabel.textColor = UIColor(named: "colorDarkGray")
+                self.primaryView.temperatureLabel.textColor = .colorDark
+                self.primaryView.temperatureDegreesLabel.textColor = .colorDark
+                self.primaryView.temperatureHighLabel.textColor = .colorDarkGray
+                self.primaryView.temperatureHighDegreesLabel.textColor = .colorDarkGray
+                self.primaryView.temperatureLowLabel.textColor = .colorDarkGray
+                self.primaryView.temperatureLowDegreesLabel.textColor = .colorDarkGray
+                self.primaryView.cityNameLabel.textColor = .colorDarkGray
                 self.primaryView.locationButton.setImage(UIImage(named: "location_pin_dark"), for: .normal)
             } else {
                 self.primaryView.temperatureLabel.textColor = .white

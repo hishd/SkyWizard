@@ -14,7 +14,7 @@ final class HourlyWeatherViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .medium, fontSize: 18)
         label.text = "10 am"
-        label.textColor = UIColor(named: "colorDark")
+        label.textColor = .colorDark
         return label
     }()
     
@@ -28,7 +28,7 @@ final class HourlyWeatherViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .semiBold, fontSize: 20)
         label.text = "22"
-        label.textColor = UIColor(named: "colorDarkGray")
+        label.textColor = .colorDarkGray
         return label
     }()
     
@@ -36,7 +36,7 @@ final class HourlyWeatherViewCell: UICollectionViewCell {
         let label = UILabel()
         label.font = FontProvider.shared.getFont(typeFace: .semiBold, fontSize: 12)
         label.text = "0"
-        label.textColor = UIColor(named: "colorDarkGray")
+        label.textColor = .colorDarkGray
         return label
     }()
     
