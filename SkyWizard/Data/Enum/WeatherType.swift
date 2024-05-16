@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum WeatherType: CaseIterable {
+enum WeatherType {
     case day_sunny
     case day_cloudy
     case day_rainy
