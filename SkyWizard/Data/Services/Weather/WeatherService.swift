@@ -11,5 +11,5 @@ import Combine
 
 protocol WeatherService {
     func getWeather(for location: CLLocation) async throws -> WeatherResult
-    func getWeather(for location: CLLocation) -> Future<WeatherResult, WeatherError>
+    func getWeather(for location: CLLocation) -> AnyPublisher<WeatherResult, WeatherError>
 }
