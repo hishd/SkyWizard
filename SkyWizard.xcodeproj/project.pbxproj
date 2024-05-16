@@ -41,7 +41,7 @@
 		FDAD5CCA2BF68BB600B558B5 /* WeatherServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD5CC92BF68BB600B558B5 /* WeatherServiceTests.swift */; };
 		FDAD5CCE2BF68E6B00B558B5 /* MockWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD5CCD2BF68E6B00B558B5 /* MockWeatherService.swift */; };
 		FDAD5CD02BF6904E00B558B5 /* URLEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD5CCF2BF6904E00B558B5 /* URLEndpoints.swift */; };
-		FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDFEB6652BAA68630027AB83 /* SnapKit */; };
+		FDAD5CD42BF6A97700B558B5 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDAD5CD32BF6A97700B558B5 /* SnapKit */; };
 		FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */; };
 		FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */; };
 		FDFEB66D2BABC1140027AB83 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */; };
@@ -116,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */,
+				FDAD5CD42BF6A97700B558B5 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +391,7 @@
 			);
 			name = SkyWizard;
 			packageProductDependencies = (
-				FDFEB6652BAA68630027AB83 /* SnapKit */,
+				FDAD5CD32BF6A97700B558B5 /* SnapKit */,
 			);
 			productName = SkyWizard;
 			productReference = FD7F07712AD582620064FE0C /* SkyWizard.app */;
@@ -813,7 +813,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FDFEB6652BAA68630027AB83 /* SnapKit */ = {
+		FDAD5CD32BF6A97700B558B5 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FDFEB6642BAA68630027AB83 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
