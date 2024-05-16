@@ -38,7 +38,6 @@ final class WeatherViewController: UIViewController {
     private lazy var bottomSheetPanGestureRecognizer: CustomPanGestureRecognizer = {
         let gestureRecognizer = CustomPanGestureRecognizer()
         gestureRecognizer.addTarget(self, action: #selector(bottomSheetPanned(recognizer:)))
-//        gestureRecognizer.delegate = self
         return gestureRecognizer
     }()
     
@@ -77,7 +76,7 @@ final class WeatherViewController: UIViewController {
     private func setupBindings() {
         viewModel
             .$weatherType
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .sink { [weak self] type in
                 self?.changeThemeColors(for: type)
                 self?.changeWeatherImage(for: type)

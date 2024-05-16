@@ -33,6 +33,7 @@
 		FD83361A2AE174D7008D08FA /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */; };
 		FD83361B2AE174D7008D08FA /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */; };
 		FD83361D2AE17B72008D08FA /* FontProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD83361C2AE17B72008D08FA /* FontProvider.swift */; };
+		FDAD5CB42BF67BF500B558B5 /* SkyWizardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDAD5CB32BF67BF500B558B5 /* SkyWizardTests.swift */; };
 		FDFEB6662BAA68630027AB83 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FDFEB6652BAA68630027AB83 /* SnapKit */; };
 		FDFEB6692BAB80770027AB83 /* BottomSwipeUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */; };
 		FDFEB66B2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */; };
@@ -43,6 +44,16 @@
 		FDFEB67A2BB2728C0027AB83 /* HourlyWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB6792BB2728C0027AB83 /* HourlyWeatherItem.swift */; };
 		FDFEB67D2BB273FF0027AB83 /* WeatherType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFEB67C2BB273FF0027AB83 /* WeatherType.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDAD5CB52BF67BF500B558B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD7F07692AD582620064FE0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD7F07702AD582620064FE0C;
+			remoteInfo = SkyWizard;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FD183AED2AE5961500A3C1A3 /* UserDefaults+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Wrapper.swift"; sourceTree = "<group>"; };
@@ -74,6 +85,8 @@
 		FD8336142AE174D7008D08FA /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		FD8336152AE174D7008D08FA /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		FD83361C2AE17B72008D08FA /* FontProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontProvider.swift; sourceTree = "<group>"; };
+		FDAD5CB12BF67BF500B558B5 /* SkyWizardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SkyWizardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDAD5CB32BF67BF500B558B5 /* SkyWizardTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkyWizardTests.swift; sourceTree = "<group>"; };
 		FDFEB6682BAB80770027AB83 /* BottomSwipeUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSwipeUpView.swift; sourceTree = "<group>"; };
 		FDFEB66A2BAB8FD00027AB83 /* CustomPanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPanGestureRecognizer.swift; sourceTree = "<group>"; };
 		FDFEB66C2BABC1140027AB83 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
@@ -93,6 +106,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDAD5CAE2BF67BF500B558B5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -100,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07732AD582620064FE0C /* SkyWizard */,
+				FDAD5CB22BF67BF500B558B5 /* SkyWizardTests */,
 				FD7F07722AD582620064FE0C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				FD7F07712AD582620064FE0C /* SkyWizard.app */,
+				FDAD5CB12BF67BF500B558B5 /* SkyWizardTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +190,10 @@
 		FD7F078D2AD58E990064FE0C /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FDAD5CBE2BF6816A00B558B5 /* Purchases */,
+				FDAD5CBD2BF6816000B558B5 /* GeoLocation */,
+				FDAD5CBC2BF6815B00B558B5 /* Location */,
+				FDAD5CBB2BF6815600B558B5 /* Weather */,
 				FD7F078F2AD58F2E0064FE0C /* LocationService.swift */,
 				FD7F07912AD58F380064FE0C /* IAPService.swift */,
 				FD7F07932AD58F5C0064FE0C /* WeatherService.swift */,
@@ -230,6 +256,42 @@
 				FD8336112AE174D6008D08FA /* Montserrat-SemiBold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FDAD5CB22BF67BF500B558B5 /* SkyWizardTests */ = {
+			isa = PBXGroup;
+			children = (
+				FDAD5CB32BF67BF500B558B5 /* SkyWizardTests.swift */,
+			);
+			path = SkyWizardTests;
+			sourceTree = "<group>";
+		};
+		FDAD5CBB2BF6815600B558B5 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		FDAD5CBC2BF6815B00B558B5 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		FDAD5CBD2BF6816000B558B5 /* GeoLocation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GeoLocation;
+			sourceTree = "<group>";
+		};
+		FDAD5CBE2BF6816A00B558B5 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		FDFEB6672BAB7F9E0027AB83 /* SubView */ = {
@@ -298,6 +360,24 @@
 			productReference = FD7F07712AD582620064FE0C /* SkyWizard.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FDAD5CB02BF67BF500B558B5 /* SkyWizardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDAD5CB72BF67BF500B558B5 /* Build configuration list for PBXNativeTarget "SkyWizardTests" */;
+			buildPhases = (
+				FDAD5CAD2BF67BF500B558B5 /* Sources */,
+				FDAD5CAE2BF67BF500B558B5 /* Frameworks */,
+				FDAD5CAF2BF67BF500B558B5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FDAD5CB62BF67BF500B558B5 /* PBXTargetDependency */,
+			);
+			name = SkyWizardTests;
+			productName = SkyWizardTests;
+			productReference = FDAD5CB12BF67BF500B558B5 /* SkyWizardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -305,11 +385,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1530;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					FD7F07702AD582620064FE0C = {
 						CreatedOnToolsVersion = 15.0;
+					};
+					FDAD5CB02BF67BF500B558B5 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = FD7F07702AD582620064FE0C;
 					};
 				};
 			};
@@ -330,6 +414,7 @@
 			projectRoot = "";
 			targets = (
 				FD7F07702AD582620064FE0C /* SkyWizard */,
+				FDAD5CB02BF67BF500B558B5 /* SkyWizardTests */,
 			);
 		};
 /* End PBXProject section */
@@ -347,6 +432,13 @@
 				FD8336162AE174D7008D08FA /* Montserrat-Medium.ttf in Resources */,
 				FD8336172AE174D7008D08FA /* Montserrat-SemiBold.ttf in Resources */,
 				FD7F077E2AD582670064FE0C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDAD5CAF2BF67BF500B558B5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,7 +478,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FDAD5CAD2BF67BF500B558B5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDAD5CB42BF67BF500B558B5 /* SkyWizardTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FDAD5CB62BF67BF500B558B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD7F07702AD582620064FE0C /* SkyWizard */;
+			targetProxy = FDAD5CB52BF67BF500B558B5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FD7F077F2AD582670064FE0C /* LaunchScreen.storyboard */ = {
@@ -527,7 +635,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyWizard/SkyWizard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZMV4XYT773;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkyWizard/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to get weather updates";
@@ -541,7 +649,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.SkyWizard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytecode.SkyWizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -557,7 +665,7 @@
 				CODE_SIGN_ENTITLEMENTS = SkyWizard/SkyWizard.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = ZMV4XYT773;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SkyWizard/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires your current location to get weather updates";
@@ -571,11 +679,49 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hishd.SkyWizard;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytecode.SkyWizard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FDAD5CB82BF67BF500B558B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytecode.SkyWizardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyWizard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyWizard";
+			};
+			name = Debug;
+		};
+		FDAD5CB92BF67BF500B558B5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9CYSVYA95H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bytecode.SkyWizardTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SkyWizard.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SkyWizard";
 			};
 			name = Release;
 		};
@@ -596,6 +742,15 @@
 			buildConfigurations = (
 				FD7F07862AD582670064FE0C /* Debug */,
 				FD7F07872AD582670064FE0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDAD5CB72BF67BF500B558B5 /* Build configuration list for PBXNativeTarget "SkyWizardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDAD5CB82BF67BF500B558B5 /* Debug */,
+				FDAD5CB92BF67BF500B558B5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
