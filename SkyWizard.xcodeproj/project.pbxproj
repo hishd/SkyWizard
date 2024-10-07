@@ -209,8 +209,6 @@
 				FDAD5CBD2BF6816000B558B5 /* GeoLocation */,
 				FDAD5CBC2BF6815B00B558B5 /* Location */,
 				FDAD5CBB2BF6815600B558B5 /* Weather */,
-				FD7F078F2AD58F2E0064FE0C /* LocationService.swift */,
-				FD7F07912AD58F380064FE0C /* IAPService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -296,6 +294,7 @@
 		FDAD5CBC2BF6815B00B558B5 /* Location */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F078F2AD58F2E0064FE0C /* LocationService.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -310,6 +309,7 @@
 		FDAD5CBE2BF6816A00B558B5 /* Purchases */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F07912AD58F380064FE0C /* IAPService.swift */,
 			);
 			path = Purchases;
 			sourceTree = "<group>";
