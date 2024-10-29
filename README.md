@@ -13,9 +13,5 @@ Sky Wizard is a weather information application, developed for iOS devices. The 
 
 ### Visual Designs
 <p>
-  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/Group%2060.png?raw=true" height="300">
-  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/Group%2061.png?raw=true" height="300">
-  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/Group%2062.png?raw=true" height="300">
-  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/Group%2063.png?raw=true" height="300">
-  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/Group%2064.png?raw=true" height="300">
+  <img src="https://github.com/hishd/SkyWizard/blob/master/resources/VisualDesigns/mockups.gif" height="300">
 </p>
