@@ -1,3 +1,4 @@
+
 # Sky Wizard iOS
 
 <p>
@@ -36,21 +37,29 @@ The codebase follows the **MV** (Model-View) pattern to create the resource stru
 
 The project component tree is shown below,
 
-- **Application** : This contains project level resources and dependencies. The Application enum is used as a namespace (as swift does't support namespaces by default).
-- **Presentation** : The layer mainly contains the main SwiftUI views, subviews and navigation logic. The representable contain the SCNView wrapped in a _UIViewRepresentable_ type.
-- **Data** : This contains all the service related components, models and datastore to support the views. The services are abstracted to create mocks and to manage dependencies.
-  - Reachability: Monitoring internet connection changes
-  - Location: Managing the location events
-  - Geocoding: Fetching the location name based on current coordinates
-  - Weather: Fetching the weather data based on the current location coordinate
-- **Util** : The utilities contains the view modifiers and view extensions which is used in the project.
-- **Other** : Contains project related files and resource files such as animations, 3d models and fonts
+ - **Application** : This contains project level resources and dependencies. The Application enum is used as a namespace (as swift does't support namespaces by default).
+ - **Presentation** : The layer mainly contains the main SwiftUI views, subviews and navigation logic. The representable contain the SCNView wrapped in a *UIViewRepresentable* type.
+ - **Util** : The utilities contains the view modifiers and view extensions which is used in the project.
+ - **Other** :  Contains project related files and resource files such as animations, 3d models and fonts
+
+#### Data Layer
+
+The data layer is on a separate swift package named **SkyWizardAPI**. This package integrated into the application target through SPM. This package contains different libraries which includes Models, Services, Logging, etc. The reason it contains libraries instead of separate swift packages is because it's too much work to work with multiple **Package.swift** files. The below section describes what libraries included within this package and what their operation is.
+
+ - **SkyWizardEnum**: The main enum types which the application needs
+ - **SkyWizardLogger**: Providing logging feature through OSLog api
+ - **SkyWizardModel**: The models and DTO's the application and services needs
+ - **SkyWizardService**: The core services the application needs to access weather data
+	 - Reachability: Monitoring internet connection changes
+	 - Location: Managing the location events
+	 - Geocoding: Fetching the location name based on current coordinates
+	 - Weather: Fetching the weather data based on the current location coordinate
 
 ### Navigation
 
-The navigation is handled by the Navigation stack which keeps track of the **AppRoute** type which is an enum containing all the navigation paths. The computed property **_content_** is an opaque type of view which is used to make the content based on navigation destination changes.
+The navigation is handled by the Navigation stack which keeps track of the **AppRoute** type which is an enum containing all the navigation paths. The computed property ***content*** is an opaque type of view which is used to make the content based on navigation destination changes.
 
-The **_navigation_** environment key is used to perform the navigation within the NavigationStack. This is implemented using SwiftUI's EnvironmentKeys and EnvironmentValues. Whenever a subview fires the _navigation_ event, the closure in the root view _(SkyWizard_SwiftUIApp)_ fill be called passing the called navigation type _(enum case)_. The type will be apended into the _routes_ instance within the root view which is used by the NavigationStack. The **_navigationDestination_** view modifier will be called and the content of the newly added enum item will be used as the destination view.
+The ***navigation*** environment key is used to perform the navigation within the NavigationStack. This is implemented using SwiftUI's EnvironmentKeys and EnvironmentValues. Whenever a subview fires the *navigation* event, the closure in the root view *(SkyWizard_SwiftUIApp)* fill be called passing the called navigation type *(enum case)*. The type will be apended into the *routes* instance within the root view which is used by the NavigationStack. The ***navigationDestination*** view modifier will be called and the content of the newly added enum item will be used as the destination view.
 
 ### Animations
 
@@ -60,7 +69,7 @@ The animations are powered by Lottie library which is a powerful api rendering j
 
 ### 3D Object (House Object)
 
-The 3D house object is a SceneKit file (.scn) which is rendered using the SceneKit api. The object does not have any lights by default and two omni lights are directed towards the object to create the lighting. These omni light nodes are manipulated during the runtime to update the lighting intensity based on the weather conditions to mimic the available sunlight behavior on a real environment.
+The 3D house object is a SceneKit file (.scn) which is rendered using the SceneKit api.  The object does not have any lights by default and two omni lights are directed towards the object to create the lighting. These omni light nodes are manipulated during the runtime to update the lighting intensity based on the weather conditions to mimic the available sunlight behavior on a real environment.
 
 The default behavior of the object such as rotation is disabled to avoid the pinch zoom, drag and y axis. Therefore the x axis rotation is handled through a **UIPanGestureRecognizer** and the objects rotation angle is handled through the pan gesture's translation. The haptic feedback is performed by using **UIImpactFeedbackGenerator** which brings soft haptic feedback based on the rotation of the house object.
 
@@ -68,10 +77,11 @@ The 3D object was downloaded from the sketchfab platform (credits go to the owne
 
 ### API's used
 
-- **SceneKit** is used to render the house model.
-- **Lottie** is used to render the animations.
-- **DependencyInjector** is used to manage application dependencies using property wrappers.
-- **NetworkingService** is used to handle http network calls.
+ -  **SceneKit** is used to render the house model.
+ -  **SpriteKit** is used to render snow and rainy weather particle effects.
+ - **Lottie** is used to render the animations.
+ - **DependencyInjector** is used to manage application dependencies using property wrappers.
+ - **NetworkingService** is used to handle http network calls.
 
 ### Upcoming Features
 
