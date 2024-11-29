@@ -24,6 +24,10 @@
 	<img src="https://github.com/hishd/SkyWizard-SwiftUI/blob/master/banners/ipad6.jpg" height="330">
 </p>
 
+### Project Repository
+
+This repository is for publishing to GitHub Pages. View the original project **[here](https://github.com/hishd/SkyWizard-SwiftUI)**.
+
 ### Overview
 
 Sky Wizard is a weather information application, developed for iOS devices. The app is open source and developed using **[open metro](https://open-meteo.com/)** api for weather updated and **[photon](https://photon.komoot.io)** for reverse geocoding.
